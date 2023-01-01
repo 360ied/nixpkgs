@@ -3,6 +3,8 @@
 , fetchFromGitHub
 , dos2unix
 , makeWrapper
+, makeDesktopItem
+, copyDesktopItems
 , SDL2
 , libGL
 , curl
@@ -21,7 +23,19 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-m7pg9OL2RuCVKgFD3hMtIeY0XdJ1YviXBFVJH8/T5gI=";
   };
 
-  nativeBuildInputs = [ dos2unix makeWrapper ];
+  nativeBuildInputs = [ dos2unix makeWrapper copyDesktopItems ];
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = pname;
+      desktopName = pname;
+      genericName = "Sandbox Block Game";
+      exec = "ClassiCube";
+      icon = "CCicon";
+      comment = "Minecraft Classic inspired sandbox game";
+      categories = [ "Game" ];
+    })
+  ];
 
   prePatch = ''
     # The ClassiCube sources have DOS-style newlines
@@ -64,6 +78,7 @@ stdenv.mkDerivation rec {
   postBuild = "cd -";
 
   installPhase = ''
+    runHook preInstall
     mkdir -p "$out/bin"
     cp 'src/ClassiCube' "$out/bin"
     # ClassiCube puts downloaded resources
@@ -75,6 +90,10 @@ stdenv.mkDerivation rec {
     wrapProgram "$out/bin/ClassiCube" \
       --run 'mkdir -p "$HOME/.local/share/ClassiCube"' \
       --run 'cd       "$HOME/.local/share/ClassiCube"'
+    runHook postInstall
+
+    mkdir -p "$out/share/icons/hicolor/256x256/apps"
+    cp misc/CCicon.png "$out/share/icons/hicolor/256x256/apps"
   '';
 
   meta = with lib; {
