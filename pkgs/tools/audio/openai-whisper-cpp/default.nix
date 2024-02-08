@@ -21,7 +21,7 @@ let
   # cuda imposes an upper bound on the gcc version, e.g. the latest gcc compatible with cudaPackages_11 is gcc11
   effectiveStdenv = if cudaSupport then cudaPackages.backendStdenv else stdenv;
 in
-effectiveStdenv.mkDerivation (finalAttrs: {
+effectiveStdenv.mkDerivation (finalAttrs: rec {
   pname = "whisper-cpp";
   version = "c0277e3e11738049d023b9efddc1fda33ccc288f";
 
