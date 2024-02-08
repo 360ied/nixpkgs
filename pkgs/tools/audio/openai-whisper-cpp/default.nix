@@ -28,7 +28,7 @@ effectiveStdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "bobqianic";
     repo = "whisper.cpp";
-    rev = "${version}" ;
+    rev = "${version}";
     hash = "sha256-ZcTKHtu9KJ6LwcSyO+mv4iWV1zttK5itjl8+F5fXpqE=";
   };
 
