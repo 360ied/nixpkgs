@@ -32,12 +32,6 @@ effectiveStdenv.mkDerivation (finalAttrs: rec {
     hash = "sha256-ZcTKHtu9KJ6LwcSyO+mv4iWV1zttK5itjl8+F5fXpqE=";
   };
 
-  # The upstream download script tries to download the models to the
-  # directory of the script, which is not writable due to being
-  # inside the nix store. This patch changes the script to download
-  # the models to the current directory of where it is being run from.
-  patches = [ ./download-models.patch ];
-
   nativeBuildInputs = [
       makeWrapper
     ] ++ lib.optionals cudaSupport ( with cudaPackages ;[
