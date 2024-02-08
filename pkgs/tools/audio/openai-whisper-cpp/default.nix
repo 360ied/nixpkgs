@@ -23,13 +23,13 @@ let
 in
 effectiveStdenv.mkDerivation (finalAttrs: {
   pname = "whisper-cpp";
-  version = "1.5.4";
+  version = "c0277e3e11738049d023b9efddc1fda33ccc288f";
 
   src = fetchFromGitHub {
-    owner = "ggerganov";
+    owner = "bobqianic";
     repo = "whisper.cpp";
-    rev = "refs/tags/v${finalAttrs.version}" ;
-    hash = "sha256-9H2Mlua5zx2WNXbz2C5foxIteuBgeCNALdq5bWyhQCk=";
+    rev = "${version}" ;
+    hash = "sha256-ZcTKHtu9KJ6LwcSyO+mv4iWV1zttK5itjl8+F5fXpqE=";
   };
 
   # The upstream download script tries to download the models to the
