@@ -1,0 +1,30 @@
+From 62f50356ec925fc6c4c39db5c445124f3aca6b38 Mon Sep 17 00:00:00 2001
+From: "R. Ryantm" <ryantm-bot@ryantm.com>
+Date: Mon, 8 Dec 2025 02:51:04 +0000
+Subject: [PATCH] yt-dlp: 2025.11.12 -> 2025.12.08
+
+---
+ pkgs/by-name/yt/yt-dlp/package.nix | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/pkgs/by-name/yt/yt-dlp/package.nix b/pkgs/by-name/yt/yt-dlp/package.nix
+index 340d5d0e7a36d..1dc56dd327cb4 100644
+--- a/pkgs/by-name/yt/yt-dlp/package.nix
++++ b/pkgs/by-name/yt/yt-dlp/package.nix
+@@ -21,14 +21,14 @@ python3Packages.buildPythonApplication rec {
+   # The websites yt-dlp deals with are a very moving target. That means that
+   # downloads break constantly. Because of that, updates should always be backported
+   # to the latest stable release.
+-  version = "2025.11.12";
++  version = "2025.12.08";
+   pyproject = true;
+ 
+   src = fetchFromGitHub {
+     owner = "yt-dlp";
+     repo = "yt-dlp";
+     tag = version;
+-    hash = "sha256-Em8FLcCizSfvucg+KPuJyhFZ5MJ8STTjSpqaTD5xeKI=";
++    hash = "sha256-y06MDP+CrlHGrell9hcLOGlHp/gU2OOxs7can4hbj+g=";
+   };
+ 
+   postPatch = ''
