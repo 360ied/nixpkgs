@@ -1,0 +1,16 @@
+diff --git a/WheelWizard/Views/App.axaml.cs b/WheelWizard/Views/App.axaml.cs
+index 399fa5a2..e42115f0 100644
+--- a/WheelWizard/Views/App.axaml.cs
++++ b/WheelWizard/Views/App.axaml.cs
+@@ -144,10 +144,8 @@ public class App : Application
+         {
+             var launchedFromProtocol = await OpenGameBananaModWindowAsync();
+ 
+-            var updateService = Services.GetRequiredService<IAutoUpdaterSingletonService>();
+             var whWzDataService = Services.GetRequiredService<IWhWzDataSingletonService>();
+ 
+-            await updateService.CheckForUpdatesAsync();
+             await whWzDataService.LoadBadgesAsync();
+             InitializeManagers();
+ 
+

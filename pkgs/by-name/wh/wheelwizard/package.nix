@@ -26,6 +26,8 @@ buildDotnetModule rec {
     rm .config/dotnet-tools.json
   '';
 
+	patches = [ ./disable_wheelwizard_update_checker.patch ];
+
   projectFile = "WheelWizard";
   buildType = "Release";
   dotnet-sdk = dotnetCorePackages.sdk_8_0-bin;
