@@ -713,6 +713,15 @@ with lib.maintainers;
     github = "security-review";
   };
 
+  stardust-xr = {
+    members = [
+      pandapip1
+      technobaboo
+    ];
+    scope = "Maintain Stardust XR packages";
+    shortName = "StardustXR";
+  };
+
   stdenv = {
     enableFeatureFreezePing = true;
     github = "stdenv";
@@ -733,7 +742,6 @@ with lib.maintainers;
       dduan
       samasaur
       stephank
-      trepetti
     ];
     scope = "Maintain Swift compiler suite for NixOS.";
     shortName = "Swift";

@@ -22,6 +22,8 @@ let
 
         afl-persistent = callPackage ../development/ocaml-modules/afl-persistent { };
 
+        alcobar = callPackage ../development/ocaml-modules/alcobar { };
+
         alcotest = callPackage ../development/ocaml-modules/alcotest { };
 
         alcotest-lwt = callPackage ../development/ocaml-modules/alcotest/lwt.nix { };
@@ -53,6 +55,8 @@ let
         ao = callPackage ../development/ocaml-modules/ao { };
 
         apron = callPackage ../development/ocaml-modules/apron { };
+
+        apronext = callPackage ../development/ocaml-modules/apronext { };
 
         argon2 = callPackage ../development/ocaml-modules/argon2 { };
 
@@ -241,6 +245,8 @@ let
           git-binary = pkgs.git;
         };
 
+        cascade = callPackage ../development/ocaml-modules/cascade { };
+
         cbor = callPackage ../development/ocaml-modules/cbor { };
 
         cfstream = callPackage ../development/ocaml-modules/cfstream { };
@@ -283,6 +289,8 @@ let
         cohttp-lwt-jsoo = callPackage ../development/ocaml-modules/cohttp/lwt-jsoo.nix { };
 
         cohttp-lwt-unix = callPackage ../development/ocaml-modules/cohttp/lwt-unix.nix { };
+
+        cohttp-server-lwt-unix = callPackage ../development/ocaml-modules/cohttp/server-lwt-unix.nix { };
 
         cohttp-top = callPackage ../development/ocaml-modules/cohttp/top.nix { };
 
@@ -762,6 +770,8 @@ let
           inherit (pkgs) gnuplot;
         };
 
+        grace = callPackage ../development/ocaml-modules/grace { };
+
         graphics =
           if lib.versionOlder "4.09" ocaml.version then
             callPackage ../development/ocaml-modules/graphics { }
@@ -1106,6 +1116,8 @@ let
         letsencrypt-mirage = callPackage ../development/ocaml-modules/letsencrypt/mirage.nix { };
 
         letters = callPackage ../development/ocaml-modules/letters { };
+
+        libabsolute = callPackage ../development/ocaml-modules/libabsolute { };
 
         libc = callPackage ../development/ocaml-modules/libc { };
 
@@ -1743,6 +1755,8 @@ let
 
         piaf = callPackage ../development/ocaml-modules/piaf { };
 
+        picasso = callPackage ../development/ocaml-modules/picasso { };
+
         piqi = callPackage ../development/ocaml-modules/piqi { };
 
         piqi-ocaml = callPackage ../development/ocaml-modules/piqi-ocaml { };
@@ -2174,6 +2188,8 @@ let
         tty = callPackage ../development/ocaml-modules/tty { };
 
         tuntap = callPackage ../development/ocaml-modules/tuntap { };
+
+        tw = callPackage ../development/ocaml-modules/tw { };
 
         twt = callPackage ../development/ocaml-modules/twt { };
 

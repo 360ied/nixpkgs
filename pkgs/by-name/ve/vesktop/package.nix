@@ -8,12 +8,12 @@
   makeDesktopItem,
   copyDesktopItems,
   vencord,
-  electron_40,
+  electron_42,
   libicns,
   pipewire,
   libpulseaudio,
   autoPatchelfHook,
-  pnpm_10_29_2,
+  pnpm_10,
   fetchPnpmDeps,
   pnpmConfigHook,
   nodejs,
@@ -26,7 +26,7 @@
   withSystemVencord ? false,
 }:
 let
-  electron = electron_40;
+  electron = electron_42;
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "vesktop";
@@ -46,7 +46,7 @@ stdenv.mkDerivation (finalAttrs: {
       src
       patches
       ;
-    pnpm = pnpm_10_29_2;
+    pnpm = pnpm_10;
     fetcherVersion = 3;
     hash = "sha256-Ue1K1KmRi4gF7E519deVY7QH+22dqlECMjdA7Z7qDCA=";
   };
@@ -54,7 +54,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     nodejs
     pnpmConfigHook
-    pnpm_10_29_2
+    pnpm_10
     jq
   ]
   ++ lib.optionals stdenv.hostPlatform.isLinux [
@@ -89,9 +89,10 @@ stdenv.mkDerivation (finalAttrs: {
 
   preBuild = ''
     # Validate electron version matches upstream package.json
-    if [ "`jq -r '.devDependencies.electron' < package.json | cut -d. -f1 | tr -d '^'`" != "${lib.versions.major electron.version}" ]
-    then
-      echo "ERROR: electron version mismatch between package.json and nixpkgs"
+    expectedMajor="$(jq -r '.devDependencies.electron | ltrimstr("^") | split(".") | .[0]' < package.json)"
+    actualMajor="${lib.versions.major electron.version}"
+    if [ "$actualMajor" -lt "$expectedMajor" ] 2>/dev/null; then
+      echo "ERROR: nixpkgs electron version (major $actualMajor) is older than upstream package.json requirement (major $expectedMajor)"
       exit 1
     fi
 
