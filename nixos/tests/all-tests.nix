@@ -588,6 +588,10 @@ in
     imports = [ ./firefox.nix ];
     _module.args.firefoxPackage = pkgs.firefox-esr-140;
   };
+  firefox-esr-153 = runTest {
+    imports = [ ./firefox.nix ];
+    _module.args.firefoxPackage = pkgs.firefox-esr-153;
+  };
   firefox-syncserver = runTest ./firefox-syncserver.nix;
   firefox_decrypt = runTest ./firefox_decrypt.nix;
   firefoxpwa = runTest ./firefoxpwa.nix;
@@ -761,6 +765,7 @@ in
   hitch = handleTest ./hitch { };
   hledger-web = runTest ./hledger-web.nix;
   hockeypuck = runTest ./hockeypuck.nix;
+  holo-daemon-modular-service = runTest ./holo-daemon-modular.nix;
   home-assistant = runTest ./home-assistant.nix;
   homebox = runTest ./homebox.nix;
   homebridge = runTest ./homebridge.nix;
