@@ -12822,6 +12822,8 @@ self: super: with self; {
   # https://github.com/opensteno/plover_plugins_registry/blob/master/unsupported.json
   plover = plover_5;
 
+  plover-combo = callPackage ../development/python-modules/plover-combo { };
+
   plover-dict-commands = callPackage ../development/python-modules/plover-dict-commands { };
 
   plover-lapwing-aio = callPackage ../development/python-modules/plover-lapwing-aio { };
@@ -14481,8 +14483,6 @@ self: super: with self; {
   pymediainfo = callPackage ../development/python-modules/pymediainfo { };
 
   pymediaroom = callPackage ../development/python-modules/pymediaroom { };
-
-  pymedio = callPackage ../development/python-modules/pymedio { };
 
   pymee = callPackage ../development/python-modules/pymee { };
 
@@ -20742,6 +20742,8 @@ self: super: with self; {
   udapi = callPackage ../development/python-modules/udapi { };
 
   udatetime = callPackage ../development/python-modules/udatetime { };
+
+  udsoncan = callPackage ../development/python-modules/udsoncan { };
 
   udtools = callPackage ../development/python-modules/udtools { };
 

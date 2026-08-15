@@ -7981,6 +7981,12 @@
     githubId = 1365692;
     name = "Will Fancher";
   };
+  elzorrorebelde = {
+    name = "Jorge Javier Araya Navarro";
+    email = "jorge@esavara.cr";
+    github = "elzorrorebelde";
+    githubId = 1055216;
+  };
   emaiax = {
     email = "github@emaiax.dev";
     github = "emaiax";
@@ -23364,6 +23370,12 @@
     githubId = 12279531;
     name = "Ricardo Guevara";
   };
+  rharish = {
+    email = "harish.rajagopals@gmail.com";
+    github = "rharish101";
+    githubId = 25344287;
+    name = "Harish Rajagopal";
+  };
   rhelmot = {
     name = "Audrey Dutcher";
     github = "rhelmot";
@@ -25122,12 +25134,6 @@
     github = "sguimmara";
     githubId = 5512096;
     name = "Sébastien Guimmara";
-  };
-  shackra = {
-    name = "Jorge Javier Araya Navarro";
-    email = "jorge@esavara.cr";
-    github = "shackra";
-    githubId = 1055216;
   };
   shadaj = {
     github = "shadaj";
@@ -28271,6 +28277,12 @@
     githubId = 5623227;
     name = "Quentin Boyer";
   };
+  tree-sapii = {
+    email = "supersapiiiiii@gmail.com";
+    github = "tree-sapii";
+    githubId = 144389458;
+    name = "sapii";
+  };
   treemo = {
     email = "matthieu.chevrier@treemo.fr";
     github = "treemo";
@@ -29885,6 +29897,13 @@
     github = "womfoo";
     githubId = 1595132;
     name = "Kranium Gikos Mendoza";
+  };
+  WOnder93 = {
+    email = "omosnacek@gmail.com";
+    github = "WOnder93";
+    githubId = 3041388;
+    matrix = "@omos:fedora.im";
+    name = "Ondrej Mosnáček";
   };
   workflow = {
     email = "4farlion@gmail.com";
