@@ -25,7 +25,8 @@ update-source-version --version-key=version antigravity-cli $latestVersion || tr
 for system in \
     x86_64-linux \
     aarch64-linux \
-    aarch64-darwin; do
+    aarch64-darwin \
+    x86_64-darwin; do
     hash=$(nix store prefetch-file --json --hash-type sha256 \
       $(nix-instantiate --eval --raw -E "with import ./. {}; antigravity-cli.src.url" --system "$system") | jq -r '.hash')
     update-source-version --version-key=version antigravity-cli $latestVersion $hash --system=$system --ignore-same-version
