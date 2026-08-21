@@ -5545,6 +5545,8 @@ self: super: with self; {
 
   feedparser = callPackage ../development/python-modules/feedparser { };
 
+  feedparser-sgmllib = callPackage ../development/python-modules/feedparser-sgmllib { };
+
   fenics-basix = callPackage ../development/python-modules/fenics-basix { };
 
   fenics-dolfinx = callPackage ../development/python-modules/fenics-dolfinx { };
@@ -7414,6 +7416,8 @@ self: super: with self; {
   hypothesis = callPackage ../development/python-modules/hypothesis { };
 
   hypothesis-auto = callPackage ../development/python-modules/hypothesis-auto { };
+
+  hypothesis-jsonschema = callPackage ../development/python-modules/hypothesis-jsonschema { };
 
   hypothesis_6_136 = callPackage ../development/python-modules/hypothesis/hypothesis_6_136.nix { };
 
@@ -18156,6 +18160,8 @@ self: super: with self; {
   smart-open = callPackage ../development/python-modules/smart-open { };
 
   smarthab = callPackage ../development/python-modules/smarthab { };
+
+  smartthings-local = callPackage ../development/python-modules/smartthings-local { };
 
   smartypants = callPackage ../development/python-modules/smartypants { };
 
